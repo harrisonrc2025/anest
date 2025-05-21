@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://wqnxfvla.gensparkspace.com/ -->
+<html lang="pt-br"><link href="chrome-extension://eanggfilgoajaocelnaflolkadkeghjp/nj.css" rel="stylesheet"><div class="HrpQab HrpQab_normal" style="inset: auto 0px 130px auto; opacity: 1;"><div class="HrpQab__button HrpQab__button_option" style="order: 1;"><img src=""><div class="HrpQab__tooltip HrpQab__tooltip_close"><div class="HrpQab__message"><br></div></div></__hrp__><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANESTESIA_FBBR</title>
+    <link href="./ANESTESIA_FBBR_files/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./ANESTESIA_FBBR_files/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .page-content {
+            display: none;
+        }
+        .page-content.active {
+            display: block;
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            transform: translateY(-3px);
+        }
+        .nav-button.active {
+            background-color: #2563eb;
+            color: white;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+<style>
+    .genspark-badge-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .genspark-modal {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 10000;
+      justify-content: end;
+    }
+    
+    .genspark-modal-content {
+      background-color: white;
+      border-radius: 8px;
+      max-width: 450px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .genspark-modal-content {
+        max-width: 90%;
+      }
+    }
+    
+    .genspark-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    .genspark-title {
+      margin-bottom: 8px;
+      font-weight: normal;
+      display: inline;
+      font-size: 14px;
+    }
+    
+    .genspark-report {
+      color: #909499;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-bottom: 14px;
+      display: inline;
+    }
+    
+    .genspark-info {
+      margin: 25px 0;
+      color: #333;
+      font-size: 14px;
+    }
+    
+    .genspark-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .genspark-remove-btn {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      color: #333;
+      padding: 4px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      flex: 1;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    
+    .genspark-go-btn {
+      background-color: #222;
+      border: none;
+      color: white;
+      padding: 4px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      flex: 1;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+  </style><style>
+    .genspark-notice-dialog {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 10001;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .genspark-notice-content {
+      background-color: white;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      box-sizing: border-box;
+      padding: 10px 30px 30px 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+    }
+
+    .genspark-notice-title {
+      color: #000;
+      font-family: Arial;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; 
+    }
+
+    .genspark-notice-list {
+      margin: 24px 0;
+      
+      color: #606366;
+      font-family: Arial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      padding-left: 12px;
+    }
+
+    .genspark-notice-list li {
+      margin-bottom: 12px;
+      list-style-type: disc;
+    }
+
+    .genspark-notice-list li a {
+      color: #606366;
+      text-decoration: underline;
+    }
+
+    .genspark-notice-checkbox {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+
+      color: #232425;
+
+      font-family: Arial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .genspark-notice-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+      
+    .genspark-notice-ok {
+      color: #232425;
+
+      text-align: center;
+      font-family: Arial;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; 
+
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      padding: 6px 14px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 8px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  </style></head>
+<body class="bg-gray-50">
+    <!-- Cabeçalho -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-6">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center">ANESTESIA_FBBR</h1>
+            <p class="text-center text-xl mt-2">Portal Educacional de Anestesia Odontológica</p>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-10">
+        <div class="container mx-auto px-4 flex flex-wrap justify-center space-x-2 md:space-x-6">
+            <button id="btnInicio" class="nav-button bg-blue-600 text-white px-4 py-2 rounded-lg font-medium active">Início</button>
+            <button id="btnTiposAnestesicos" class="nav-button bg-gray-200 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-lg font-medium">Tipos de Anestésicos</button>
+            <button id="btnComplicacoes" class="nav-button bg-gray-200 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-lg font-medium">Complicações/Técnicas</button>
+            <button id="btnCasosClinicos" class="nav-button bg-gray-200 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-lg font-medium">Casos Clínicos</button>
+            <button id="btnDuvidas" class="nav-button bg-gray-200 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-lg font-medium">Dúvidas e Malamed</button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Página Inicial -->
+        <div id="pageInicio" class="page-content active">
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-4">Bem-vindo ao Portal de Anestesia Odontológica</h2>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 pr-0 md:pr-6">
+                        <p class="text-lg mb-4">A anestesia local é um componente fundamental na prática odontológica moderna, permitindo procedimentos sem dor e aumentando o conforto do paciente.</p>
+                        <p class="text-lg mb-4">Este portal foi desenvolvido como recurso educacional para estudantes e profissionais que desejam aprofundar seus conhecimentos em técnicas anestésicas, tipos de anestésicos, protocolos clínicos e manejo de complicações.</p>
+                        <p class="text-lg mb-4">Explore os tópicos através dos botões de navegação para conhecer mais sobre as diferentes abordagens anestésicas utilizadas na odontologia contemporânea.</p>
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-4">
+                            <p class="font-medium">A anestesia local bem administrada é a base de uma odontologia confortável e segura para os pacientes.</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 mt-4 md:mt-0 image-container">
+                        <img src="./ANESTESIA_FBBR_files/regional-anesthesia-anatomy-of-the-mandibular-nerve-836x1024.jpg" alt="Anatomia do nervo mandibular" class="mx-auto">
+                        <p class="text-center text-sm text-gray-600 mt-2">Anatomia do nervo mandibular - Fonte: NYSORA</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h3 class="text-2xl font-semibold text-blue-700 mb-4">Importância da Anestesia em Odontologia</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="text-xl font-medium text-blue-600 mb-2">Controle da Dor</h4>
+                        <p>A anestesia local bloqueia reversivelmente a condução nervosa, eliminando a sensação de dor durante procedimentos odontológicos, sem alteração do nível de consciência.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="text-xl font-medium text-blue-600 mb-2">Conforto do Paciente</h4>
+                        <p>Permite a realização de procedimentos invasivos com mínimo desconforto, reduzindo a ansiedade e melhorando a experiência do paciente no consultório.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="text-xl font-medium text-blue-600 mb-2">Eficiência Clínica</h4>
+                        <p>Possibilita que o cirurgião-dentista trabalhe com maior precisão e tranquilidade, sem a preocupação com a dor do paciente durante o procedimento.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="text-xl font-medium text-blue-600 mb-2">Humanização</h4>
+                        <p>O controle adequado da dor é parte fundamental da humanização do atendimento odontológico, fortalecendo a relação profissional-paciente.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-semibold text-blue-700 mb-4">Conteúdo do Portal</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300">
+                        <h4 class="text-xl font-medium text-blue-600 mb-2">Tipos de Anestésicos</h4>
+                        <p class="mb-3">Conheça os diferentes anestésicos utilizados na odontologia, suas propriedades, indicações e contraindicações.</p>
+                        <button onclick="document.getElementById(&#39;btnTiposAnestesicos&#39;).click()" class="text-blue-600 hover:text-blue-800 font-medium">Saiba mais →</button>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300">
+                        <h4 class="text-xl font-medium text-blue-600 mb-2">Técnicas Anestésicas</h4>
+                        <p class="mb-3">Aprenda sobre as diversas técnicas de anestesia regional, bloqueio de nervo e infiltração local utilizadas na prática odontológica.</p>
+                        <button onclick="document.getElementById(&#39;btnComplicacoes&#39;).click()" class="text-blue-600 hover:text-blue-800 font-medium">Saiba mais →</button>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300">
+                        <h4 class="text-xl font-medium text-blue-600 mb-2">Casos Clínicos</h4>
+                        <p class="mb-3">Estude casos práticos que ilustram a aplicação das técnicas anestésicas em diferentes situações clínicas.</p>
+                        <button onclick="document.getElementById(&#39;btnCasosClinicos&#39;).click()" class="text-blue-600 hover:text-blue-800 font-medium">Saiba mais →</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Página Tipos de Anestésicos -->
+        <div id="pageTiposAnestesicos" class="page-content">
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-6">Tipos de Anestésicos Odontológicos</h2>
+                
+                <p class="text-lg mb-6">Os anestésicos locais são substâncias que bloqueiam a condução nervosa de forma reversível, permitindo a realização de procedimentos sem dor, mantendo o paciente consciente. Abaixo, conheça os principais tipos utilizados na odontologia:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Lidocaína</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Concentração:</strong> 2% (mais comum)</li>
+                            <li><strong>Duração:</strong> 60-90 minutos (com vasoconstritor)</li>
+                            <li><strong>Características:</strong> Considerada o "padrão ouro" dos anestésicos odontológicos</li>
+                            <li><strong>Vasoconstritor comum:</strong> Epinefrina 1:100.000</li>
+                            <li><strong>Início de ação:</strong> 2-3 minutos</li>
+                            <li><strong>Indicações:</strong> Maioria dos procedimentos odontológicos de rotina</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Mepivacaína</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Concentração:</strong> 2% ou 3%</li>
+                            <li><strong>Duração:</strong> 20-40 minutos (sem vasoconstritor); 60-90 minutos (com vasoconstritor)</li>
+                            <li><strong>Características:</strong> Boa opção para pacientes com contraindicação à epinefrina</li>
+                            <li><strong>Vasoconstritor comum:</strong> Adrenalina 1:100.000 ou sem vasoconstritor (3%)</li>
+                            <li><strong>Início de ação:</strong> 1,5-2 minutos</li>
+                            <li><strong>Indicações:</strong> Procedimentos de curta duração, pacientes com hipertireoidismo, hipertensão severa</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Articaína</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Concentração:</strong> 4%</li>
+                            <li><strong>Duração:</strong> 60-75 minutos (pulpar); 180-360 minutos (tecidos moles)</li>
+                            <li><strong>Características:</strong> Alta difusibilidade através dos tecidos ósseos e moles</li>
+                            <li><strong>Vasoconstritor comum:</strong> Epinefrina 1:100.000 ou 1:200.000</li>
+                            <li><strong>Início de ação:</strong> 1-2 minutos</li>
+                            <li><strong>Indicações:</strong> Excelente para infiltrações vestibulares mandibulares, casos de pulpite</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Prilocaína</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Concentração:</strong> 4%</li>
+                            <li><strong>Duração:</strong> 60-90 minutos</li>
+                            <li><strong>Características:</strong> Menor toxicidade sistêmica comparada à lidocaína</li>
+                            <li><strong>Vasoconstritor comum:</strong> Felipressina</li>
+                            <li><strong>Início de ação:</strong> 2-4 minutos</li>
+                            <li><strong>Indicações:</strong> Alternativa para pacientes com contraindicação à epinefrina</li>
+                            <li><strong>Observação:</strong> Risco de metemoglobinemia em doses elevadas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Bupivacaína</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Concentração:</strong> 0,5%</li>
+                            <li><strong>Duração:</strong> 180-240 minutos (pulpar); 7-12 horas (tecidos moles)</li>
+                            <li><strong>Características:</strong> Anestésico de longa duração</li>
+                            <li><strong>Vasoconstritor comum:</strong> Epinefrina 1:200.000</li>
+                            <li><strong>Início de ação:</strong> 6-10 minutos</li>
+                            <li><strong>Indicações:</strong> Procedimentos longos, controle da dor pós-operatória</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-2">Classificação dos Anestésicos</h3>
+                        <p class="mb-4">Os anestésicos locais são classificados em dois grupos principais:</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-blue-700">Ésteres</h4>
+                            <p>Procaína, benzocaína, tetracaína - Menos utilizados atualmente devido ao maior potencial alergênico</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-700">Amidas</h4>
+                            <p>Lidocaína, mepivacaína, articaína, prilocaína, bupivacaína - São os mais utilizados na odontologia moderna por sua menor toxicidade e potencial alergênico</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-container mb-8">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Componentes do Cartucho Anestésico</h3>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2">
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>Sal anestésico:</strong> Agente ativo que bloqueia a condução nervosa</li>
+                                <li><strong>Vasoconstritor:</strong> Prolonga a duração do anestésico e reduz o sangramento</li>
+                                <li><strong>Conservante do vasoconstritor:</strong> Bissulfito ou metabissulfito de sódio</li>
+                                <li><strong>Veículo:</strong> Água destilada estéril</li>
+                                <li><strong>Cloreto de sódio:</strong> Ajuste da isotonicidade</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 mt-4 md:mt-0 image-container">
+                            <img src="./ANESTESIA_FBBR_files/regional-anesthesia-dental-cartridges-1024x346.jpg" alt="Cartuchos de anestésico dental" class="mx-auto">
+                            <p class="text-center text-sm text-gray-600 mt-2">Cartuchos de anestésico dental - Fonte: NYSORA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow mb-6">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Vasoconstritores em Anestésicos Locais</h3>
+                    <p class="mb-4">Os vasoconstritores são adicionados às soluções anestésicas para:</p>
+                    <ul class="list-disc pl-6 space-y-2 mb-4">
+                        <li>Prolongar a duração da anestesia</li>
+                        <li>Reduzir a toxicidade sistêmica ao retardar a absorção do anestésico</li>
+                        <li>Melhorar a hemostasia no campo cirúrgico</li>
+                        <li>Permitir o uso de menor quantidade de anestésico</li>
+                    </ul>
+                    <p class="mb-2"><strong>Principais vasoconstritores:</strong></p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Epinefrina (adrenalina):</strong> 1:50.000, 1:100.000, 1:200.000</li>
+                        <li><strong>Norepinefrina (noradrenalina):</strong> 1:50.000, 1:100.000</li>
+                        <li><strong>Felipressina:</strong> 0,03 UI/mL (utilizada com prilocaína)</li>
+                        <li><strong>Levonordefrina:</strong> 1:20.000</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6">
+                    <h3 class="text-xl font-semibold text-yellow-800 mb-2">Cuidados e Contraindicações</h3>
+                    <p class="mb-2">Alguns cuidados devem ser tomados na escolha do anestésico:</p>
+                    <ul class="list-disc pl-6 space-y-1">
+                        <li>Verificação da história médica do paciente</li>
+                        <li>Identificação de alergias prévias</li>
+                        <li>Avaliação de condições sistêmicas que possam contraindicar certos anestésicos ou vasoconstritores</li>
+                        <li>Cálculo de dose máxima segura, especialmente em crianças e idosos</li>
+                        <li>Cuidados especiais em pacientes com doenças cardiovasculares, hipertireoidismo ou diabetes</li>
+                    </ul>
+                </div>
+
+                <div class="video-container">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Vídeo Educativo: Guia Completo de Anestesia em Odontologia</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-96" src="./ANESTESIA_FBBR_files/ZiLy2uWl2GM.html" title="Guia Completo: Técnicas Práticas de Anestesia em Odontologia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                    </div>
+                    <p class="text-center text-sm text-gray-600 mt-2">Fonte: Canal Dentista de Sucesso no YouTube</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Página Complicações/Técnicas Anestésicas -->
+        <div id="pageComplicacoes" class="page-content">
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-6">Técnicas Anestésicas e Complicações</h2>
+                
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Principais Técnicas Anestésicas</h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="text-xl font-semibold text-blue-600 mb-3">Bloqueio do Nervo Alveolar Inferior</h4>
+                            <div class="image-container mb-4">
+                                <img src="./ANESTESIA_FBBR_files/maxresdefault.jpg" alt="Bloqueio do Nervo Alveolar Inferior" class="mx-auto rounded">
+                            </div>
+                            <p class="mb-3"><strong>Áreas anestesiadas:</strong> Todos os dentes inferiores do lado injetado até a linha média, mucosa vestibular anterior aos molares, dois terços anteriores da língua e assoalho bucal.</p>
+                            <p class="mb-3"><strong>Técnica:</strong></p>
+                            <ol class="list-decimal pl-6 space-y-1 mb-3">
+                                <li>Identifique a linha oblíqua interna e a rafe pterigomandibular</li>
+                                <li>Inserção da agulha longa na altura oclusal dos molares inferiores</li>
+                                <li>Penetração de 20-25mm até o contato ósseo</li>
+                                <li>Aspiração em dois planos</li>
+                                <li>Deposição de 1,5 a 1,8 mL de solução anestésica</li>
+                            </ol>
+                            <p class="mb-2"><strong>Complementação:</strong> Bloqueio do nervo bucal para anestesiar mucosa vestibular dos molares.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="text-xl font-semibold text-blue-600 mb-3">Infiltração Supraperiosteal</h4>
+                            <div class="image-container mb-4">
+                                <img src="./ANESTESIA_FBBR_files/regional-anesthesia-locate-the-height-of-the-mucobuccal-fold-over-the-tooth-to-be-anesthetized-clinical-picture-depicting-a-local-infiltration-of-the-maxillary-left-central-incisor-tooth-1024x522.jpg" alt="Técnica de infiltração" class="mx-auto rounded">
+                            </div>
+                            <p class="mb-3"><strong>Áreas anestesiadas:</strong> Dente específico e tecidos moles adjacentes</p>
+                            <p class="mb-3"><strong>Técnica:</strong></p>
+                            <ol class="list-decimal pl-6 space-y-1 mb-3">
+                                <li>Identificar altura da prega mucovestibular sobre o dente</li>
+                                <li>Inserir agulha curta (25 ou 27G) com bisel voltado para o osso</li>
+                                <li>Penetração de poucos milímetros</li>
+                                <li>Aspiração e injeção lenta de 0,6-1,2 mL de solução</li>
+                            </ol>
+                            <p class="mb-2"><strong>Indicações:</strong> Anestesia de dentes individuais na maxila ou complementação de outras técnicas.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="text-xl font-semibold text-blue-600 mb-3">Bloqueio do Nervo Alveolar Superior Posterior</h4>
+                            <div class="image-container mb-4">
+                                <img src="./ANESTESIA_FBBR_files/hq720.jpg" alt="Técnicas anestésicas: bloqueio do Nervo Alveolar Posterior" class="mx-auto rounded">
+                            </div>
+                            <p class="mb-3"><strong>Áreas anestesiadas:</strong> Molares superiores (exceto raiz mésio-vestibular do 1º molar em alguns casos), tecido ósseo e gengiva vestibular</p>
+                            <p class="mb-3"><strong>Técnica:</strong></p>
+                            <ol class="list-decimal pl-6 space-y-1 mb-3">
+                                <li>Posicione o paciente em inclinação de 45°</li>
+                                <li>Inserção da agulha na altura da prega mucovestibular do 2° molar superior</li>
+                                <li>Direção superior, posterior e medial</li>
+                                <li>Avanço de 16mm em média</li>
+                                <li>Aspiração e injeção de 0,9-1,8 mL</li>
+                            </ol>
+                            <p><strong>Cuidados:</strong> Aspiração obrigatória pelo risco de injeção intravascular no plexo pterigóide.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="text-xl font-semibold text-blue-600 mb-3">Técnica Intraligamentar (PDL)</h4>
+                            <div class="image-container mb-4">
+                                <img src="./ANESTESIA_FBBR_files/regional-anesthesia-clinical-picture-depicting-a-periodontal-ligament-injection-1024x782.jpg" alt="Injeção no ligamento periodontal" class="mx-auto rounded">
+                            </div>
+                            <p class="mb-3"><strong>Áreas anestesiadas:</strong> Dente específico e seu periodonto</p>
+                            <p class="mb-3"><strong>Técnica:</strong></p>
+                            <ol class="list-decimal pl-6 space-y-1 mb-3">
+                                <li>Inserção da agulha curta 30G no sulco gengival</li>
+                                <li>Posicionamento da agulha paralela ao longo eixo do dente</li>
+                                <li>Inserção até encontrar resistência</li>
+                                <li>Injeção lenta de 0,2 mL com pressão constante</li>
+                                <li>Repetir nos outros pontos do dente se necessário</li>
+                            </ol>
+                            <p><strong>Indicações:</strong> Complementação de outras técnicas ou anestesia de dentes isolados.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-4">Vídeo: Bloqueio do Nervo Alveolar Inferior - Técnica Direta</h4>
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-96" src="./ANESTESIA_FBBR_files/1XUmLjjcNd4.html" title="Bloqueio do Nervo Alveolar Inferior - Técnica Direta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                        </div>
+                        <p class="text-center text-sm text-gray-600 mt-2">Fonte: Canal Professor Dentista no YouTube</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Complicações Anestésicas</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-red-50 p-5 rounded-lg border-l-4 border-red-400">
+                            <h4 class="text-xl font-semibold text-red-700 mb-3">Complicações Locais</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Dor durante injeção:</strong> Causada por agulha romba, injeção rápida ou solução em temperatura inadequada</li>
+                                <li><strong>Trismo:</strong> Espasmo muscular por trauma de agulha ou infecção secundária</li>
+                                <li><strong>Hematoma:</strong> Injeção em vasos sanguíneos, comum em bloqueio do PSA ou BNAI</li>
+                                <li><strong>Parestesia:</strong> Lesão nervosa que pode ser temporária ou permanente</li>
+                                <li><strong>Paralisia facial:</strong> Quando o anestésico atinge o nervo facial (comum no BNAI)</li>
+                                <li><strong>Fratura de agulha:</strong> Por movimento brusco do paciente ou uso de agulhas finas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-50 p-5 rounded-lg border-l-4 border-red-400">
+                            <h4 class="text-xl font-semibold text-red-700 mb-3">Complicações Sistêmicas</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Toxicidade por superdosagem:</strong> Sintomas neurológicos e cardiovasculares</li>
+                                <li><strong>Reações alérgicas:</strong> Desde urticária até choque anafilático</li>
+                                <li><strong>Síncope:</strong> Perda transitória da consciência por ansiedade</li>
+                                <li><strong>Reações ao vasoconstritor:</strong> Taquicardia, hipertensão, arritmias</li>
+                                <li><strong>Metemoglobinemia:</strong> Associada principalmente à prilocaína em altas doses</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="image-container mb-6">
+                        <img src="./ANESTESIA_FBBR_files/acidentes-e-complicacoes-anestesia-local.jpg" alt="Acidentes e complicações com anestésicos locais" class="mx-auto rounded">
+                        <p class="text-center text-sm text-gray-600 mt-2">Acidentes e complicações com anestésicos locais - Fonte: Odontologistas</p>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-lg mb-6">
+                        <h4 class="text-xl font-semibold text-yellow-700 mb-3">Manejo de Complicações</h4>
+                        
+                        <div class="mb-4">
+                            <h5 class="font-medium text-yellow-800 mb-2">1. Toxicidade Sistêmica</h5>
+                            <ul class="list-disc pl-6 space-y-1">
+                                <li>Interromper a administração do anestésico</li>
+                                <li>Manter vias aéreas permeáveis</li>
+                                <li>Administrar oxigênio</li>
+                                <li>Controlar convulsões se ocorrerem</li>
+                                <li>Monitorar sinais vitais</li>
+                                <li>Emulsão lipídica a 20% em casos graves</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="font-medium text-yellow-800 mb-2">2. Reação Alérgica</h5>
+                            <ul class="list-disc pl-6 space-y-1">
+                                <li>Interromper a administração do alérgeno</li>
+                                <li>Avaliar gravidade da reação</li>
+                                <li>Administrar anti-histamínicos para reações leves</li>
+                                <li>Adrenalina (0,3-0,5mg IM) para reações graves</li>
+                                <li>Acionar serviço médico de emergência</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-medium text-yellow-800 mb-2">3. Síncope</h5>
+                            <ul class="list-disc pl-6 space-y-1">
+                                <li>Posicionar o paciente com a cabeça abaixo do nível do coração</li>
+                                <li>Remover materiais da boca</li>
+                                <li>Afrouxar roupas apertadas</li>
+                                <li>Monitorar sinais vitais</li>
+                                <li>Administrar oxigênio se disponível</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-blue-700 mb-3">Prevenção de Complicações</h4>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Realize uma anamnese detalhada antes de qualquer procedimento</li>
+                            <li>Conheça as doses máximas dos anestésicos</li>
+                            <li>Sempre realize aspiração antes de injetar o anestésico</li>
+                            <li>Faça infiltrações lentas (30-60 segundos por tubete)</li>
+                            <li>Use a menor dose efetiva de anestésico necessária</li>
+                            <li>Tenha precaução especial em pacientes de risco</li>
+                            <li>Mantenha material de emergência facilmente acessível</li>
+                            <li>Conheça os protocolos de atendimento às emergências</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Manejo de Falhas Anestésicas</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <h4 class="text-xl font-semibold text-blue-600 mb-3">Causas Comuns de Falha</h4>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Variações anatômicas</li>
+                                <li>Inserção inadequada da agulha</li>
+                                <li>Anestésico insuficiente ou inativo</li>
+                                <li>Inflamação e infecção local</li>
+                                <li>pH tecidual alterado (pulpites)</li>
+                                <li>Ansiedade do paciente</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <h4 class="text-xl font-semibold text-blue-600 mb-3">Soluções para Falhas Anestésicas</h4>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Complementação com outras técnicas</li>
+                                <li>Repetição da técnica com ajustes</li>
+                                <li>Utilização de anestésicos mais potentes</li>
+                                <li>Técnicas complementares (intrapulpar, intraligamentar)</li>
+                                <li>Administração de analgésicos prévios</li>
+                                <li>Considerar sedação consciente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Página Casos Clínicos -->
+        <div id="pageCasosClinicos" class="page-content">
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-3xl font-semibold text-blue-800">Casos Clínicos</h2>
+                    <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg">
+                        <span class="font-medium">Análise do caso</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <div class="flex flex-col sm:flex-row justify-between mb-4">
+                        <div>
+                            <p class="font-semibold text-gray-700">Prof. Erik Jesus</p>
+                            <p>Aluno: Harrison Ribeiro Costa</p>
+                        </div>
+                        <div class="mt-2 sm:mt-0">
+                            <p class="text-gray-600">Caso Clínico: Pulpite Irreversível</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border-l-4 border-blue-600 pl-4 py-2 bg-blue-50 mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Dados do Caso</h3>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Dente 36:</strong> primeiro molar inferior esquerdo.</li>
+                            <li><strong>Pulpite irreversível:</strong> inflamação intensa da polpa, gerando hiperalgesia e diminuição do pH tecidual.</li>
+                            <li><strong>Paciente ASA I:</strong> saudável, sem contraindicações sistêmicas.</li>
+                            <li><strong>Desafio clínico:</strong> maior probabilidade de falha anestésica, pois dentes com pulpite irreversível são difíceis de anestesiar adequadamente apenas com bloqueio convencional.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="bg-gray-50 rounded-lg p-6 shadow-sm mb-6">
+                                <h3 class="text-2xl font-semibold text-blue-700 mb-4">1. Técnica anestésica inicial recomendada</h3>
+                                <h4 class="text-xl font-semibold text-blue-600 mb-3">BLOQUEIO DO NERVO ALVEOLAR INFERIOR (BNAI)</h4>
+                                
+                                <p class="mb-3 font-medium">Passo a passo da técnica:</p>
+                                <ol class="list-decimal pl-6 space-y-3">
+                                    <li>
+                                        <strong>Posicionamento:</strong>
+                                        <ul class="list-disc pl-6 mt-1 space-y-1">
+                                            <li>Paciente com boca bem aberta.</li>
+                                            <li>O operador se posiciona do lado oposto ao dente a ser anestesiado (no caso do 36, à direita do paciente).</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Ponto de referência anatômico:</strong>
+                                        <ul class="list-disc pl-6 mt-1 space-y-1">
+                                            <li>Linha oblíqua interna da mandíbula.</li>
+                                            <li>Altura oclusal dos molares inferiores.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Inserção da agulha:</strong>
+                                        <ul class="list-disc pl-6 mt-1 space-y-1">
+                                            <li>Agulha longa (27G).</li>
+                                            <li>Inserida lateralmente, cerca de 1 cm acima da linha oclusal.</li>
+                                            <li>A profundidade de penetração média é de 20-25 mm até o contato ósseo (língula da mandíbula).</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Aspiração:</strong>
+                                        <ul class="list-disc pl-6 mt-1">
+                                            <li>Realize aspiração em dois planos para evitar injeção intravascular.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Depósito anestésico:</strong>
+                                        <ul class="list-disc pl-6 mt-1 space-y-1">
+                                            <li>Injetar lentamente 1,5 a 1,8 mL de anestésico (preferencialmente articaína 4% com epinefrina 1:100.000 ou lidocaína 2% com epinefrina).</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Complementar com bloqueio do nervo lingual e bucal:</strong>
+                                        <ul class="list-disc pl-6 mt-1 space-y-1">
+                                            <li>0,3 mL para o lingual (antes de retirar a agulha completamente).</li>
+                                            <li>Infiltração vestibular (nervo bucal longo): 0,3 a 0,5 mL na região do 36.</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                                <h3 class="text-xl font-semibold text-blue-700 mb-3">Resumo da conduta ideal para este caso (em ordem)</h3>
+                                <ol class="list-decimal pl-6 space-y-2">
+                                    <li>Bloqueio do nervo alveolar inferior com lidocaína ou articaína.</li>
+                                    <li>Infiltração vestibular com articaína como suplementação.</li>
+                                    <li>Se necessário, aplicar anestesia intraligamentar.</li>
+                                    <li>Se ainda houver dor, realizar técnica intraóssea ou intrapulpar.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-gray-50 rounded-lg p-6 shadow-sm mb-6">
+                                <h3 class="text-2xl font-semibold text-blue-700 mb-4">2. O que fazer em caso de falha anestésica?</h3>
+                                
+                                <p class="mb-4">Dentes com pulpite irreversível frequentemente não são completamente anestesiados com o BNAI. Aqui estão técnicas adicionais recomendadas:</p>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-lg font-semibold text-blue-600 mb-2">a) Infiltração bucal com Articaína 4% (Suplementar)</h4>
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li><strong>Por quê?</strong> A articaína tem alta difusão tecidual e pode penetrar melhor o osso mandibular.</li>
+                                        <li><strong>Como fazer:</strong> Injetar 1,0 mL na mucosa vestibular adjacente ao dente 36, 5 a 10 minutos após o bloqueio.</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-lg font-semibold text-blue-600 mb-2">b) Técnica intraligamentar (PDL)</h4>
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li>Usar seringa específica ou carpule com agulha curta.</li>
+                                        <li>Depositar 0,2 mL por raiz (mínimo 0,4 mL no 36).</li>
+                                        <li>Inserir a agulha firmemente entre o dente e o ligamento, com pressão constante.</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h4 class="text-lg font-semibold text-blue-600 mb-2">c) Técnica intraóssea</h4>
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li>Técnica mais invasiva.</li>
+                                        <li>Utiliza sistema como X-Tip ou Stabident.</li>
+                                        <li>Permite acesso direto ao osso esponjoso ao redor do ápice do dente.</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-lg font-semibold text-blue-600 mb-2">d) Técnica intrapulpar (último recurso)</h4>
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li>Usada durante o acesso endodôntico, quando há exposição pulpar.</li>
+                                        <li>A anestesia se dá pela pressão da injeção (não pelo fármaco).</li>
+                                        <li>Pode ser dolorosa, mas é eficaz para analgesia imediata.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="image-container mb-4">
+                                    <img src="./ANESTESIA_FBBR_files/maxresdefault.jpg" alt="Bloqueio do Nervo Alveolar Inferior" class="mx-auto rounded">
+                                    <p class="text-center text-sm text-gray-600 mt-1">Bloqueio do Nervo Alveolar Inferior - Técnica Direta</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <h4 class="text-lg font-semibold text-blue-700 mb-2">Referências confiáveis</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Malamed SF. Manual de Anestesia Local. 6ª ed.</li>
+                                        <li>Cohen S, Hargreaves KM. Pathways of the Pulp. 11ª ed.</li>
+                                        <li>AAE – American Association of Endodontists: Management of "Hot Tooth".</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Outros Fatores Relevantes no Caso</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Pulpite Irreversível e pH Tecidual</h4>
+                            <p>Em casos de pulpite irreversível, o pH tecidual é reduzido devido ao processo inflamatório. Isso dificulta a ação dos anestésicos, que funcionam melhor em pH alcalino. A acidez do meio diminui a disponibilidade da forma não ionizada do anestésico, que é responsável pela penetração na membrana neural.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Falência Anestésica</h4>
+                            <p>A taxa de falha anestésica no BNAI convencional para casos de pulpite irreversível pode chegar a 30-80%. Fatores como canais acessórios, inervação cruzada, sensibilização de nociceptores e ativação de receptores tetrodotoxina-resistentes contribuem para essa falha.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Vantagem da Articaína</h4>
+                            <p>A articaína 4% apresenta vantagens para casos de pulpite por sua alta lipossolubilidade e capacidade de difusão através dos tecidos ósseos, permitindo uma anestesia mais profunda em casos de inflamação. A literatura científica demonstra maior taxa de sucesso em técnicas suplementares com articaína.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Vídeo Complementar: Técnica de Bloqueio do Nervo Alveolar Inferior</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-96" src="./ANESTESIA_FBBR_files/XNja6pvULyQ.html" title="Passo-a-Passo do Bloqueio do Nervo Alveolar Inferior | Prof Fernando Giovanella" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                    </div>
+                    <p class="text-center text-sm text-gray-600 mt-2">Fonte: Canal Fernando Giovanella no YouTube</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Página Dúvidas e Malamed -->
+        <div id="pageDuvidas" class="page-content">
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-3xl font-semibold text-blue-800 mb-6">Dúvidas e Malamed</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 mb-8">
+                    <div class="md:w-1/3">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-40 h-40 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+                                    <img src="./ANESTESIA_FBBR_files/81tsFO3I+GL._AC_UF1000,1000_QL80_.jpg" alt="Dr. Stanley Malamed" class="w-full">
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-700 text-center mb-2">Dr. Stanley F. Malamed</h3>
+                            <p class="text-center text-gray-600 mb-4">Expert mundial em anestesia odontológica</p>
+                            <p class="text-sm">Dr. Stanley Malamed é professor emérito de Anestesia e Medicina da Universidade do Sul da Califórnia (USC) School of Dentistry. Reconhecido mundialmente como um dos maiores especialistas em anestesia e sedação nas especialidades odontológicas.</p>
+                            <div class="mt-4 text-center">
+                                <a href="https://www.amazon.com.br/Manual-Anestesia-Local-Stanley-Malamed/dp/8535261540" target="_blank" class="text-blue-600 hover:underline">Manual de Anestesia Local</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-2/3">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm mb-6">
+                            <h3 class="text-2xl font-semibold text-blue-700 mb-4">O Manual de Anestesia Local</h3>
+                            <p class="mb-4">Considerado a "bíblia" da anestesiologia odontológica, o "Manual de Anestesia Local" do Dr. Stanley Malamed é a obra mais completa e influente na área. Publicado pela primeira vez em 1980, o livro está atualmente em sua 7ª edição e é referência mundial para estudantes e profissionais.</p>
+                            <p class="mb-4">A obra apresenta uma abordagem prática e didática sobre todos os aspectos da anestesia local em odontologia, desde farmacologia dos anestésicos até técnicas específicas de administração e manejo de complicações. O Dr. Malamed compilou décadas de experiência clínica e acadêmica neste guia considerado indispensável para a prática odontológica segura.</p>
+                            <div class="flex items-center mb-4 bg-blue-100 p-3 rounded">
+                                <i class="fas fa-book-open mr-3 text-blue-600 text-2xl"></i>
+                                <div>
+                                    <p class="text-sm font-medium">Principais tópicos abordados no Manual:</p>
+                                    <ul class="list-disc pl-5 text-sm space-y-1 mt-1">
+                                        <li>Neuroanatomia</li>
+                                        <li>Farmacologia dos anestésicos locais</li>
+                                        <li>Vasoconstritores</li>
+                                        <li>Técnicas anestésicas detalhadas</li>
+                                        <li>Complicações locais e sistêmicas</li>
+                                        <li>Anestesia em pacientes especiais</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Perguntas Frequentes sobre Anestesia</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg p-5">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Qual é o melhor anestésico para usar em procedimentos odontológicos?</h4>
+                            <p>Segundo Malamed, não existe um "melhor" anestésico em termos absolutos. A escolha deve ser baseada em diversos fatores, como a duração do procedimento, a necessidade de hemostasia, a condição médica do paciente e as particularidades do caso. A lidocaína 2% com epinefrina 1:100.000 é considerada o "padrão-ouro" pela sua eficácia e segurança, mas articaína, mepivacaína e prilocaína também têm indicações específicas.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-5">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Qual a dose máxima segura de anestésico local?</h4>
+                            <p>As doses máximas recomendadas por Malamed são:</p>
+                            <ul class="list-disc pl-6 space-y-1 mt-2">
+                                <li>Lidocaína 2%: 4,4 mg/kg (máximo 300 mg)</li>
+                                <li>Articaína 4%: 7,0 mg/kg (máximo 500 mg)</li>
+                                <li>Mepivacaína 2%: 4,4 mg/kg (máximo 300 mg)</li>
+                                <li>Prilocaína 4%: 6,0 mg/kg (máximo 400 mg)</li>
+                                <li>Bupivacaína 0,5%: 1,3 mg/kg (máximo 90 mg)</li>
+                            </ul>
+                            <p class="mt-2">Estas doses devem ser reduzidas em pacientes com comprometimento sistêmico, idosos e crianças.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-5">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Por que alguns pacientes são difíceis de anestesiar?</h4>
+                            <p>Malamed aponta diversos fatores que contribuem para falhas anestésicas:</p>
+                            <ul class="list-disc pl-6 space-y-1 mt-2">
+                                <li>Variações anatômicas (como o canal retromolar)</li>
+                                <li>Inervação acessória ou cruzada</li>
+                                <li>Técnica inadequada</li>
+                                <li>pH tecidual alterado (em casos de inflamação)</li>
+                                <li>Ansiedade do paciente (que pode alterar a percepção da dor)</li>
+                                <li>Infecção ativa na área (que torna o meio mais ácido)</li>
+                                <li>Taquifilaxia (diminuição da resposta às aplicações repetidas)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-5">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">É seguro usar anestésicos com vasoconstritor em pacientes cardíacos?</h4>
+                            <p>De acordo com Malamed, a epinefrina em baixas concentrações (1:100.000 ou 1:200.000) é segura para a maioria dos pacientes cardíacos, desde que sejam usadas não mais que 2 tubetes (3,6 mL) por consulta e com aspiração cuidadosa antes da injeção. O risco da dor e do estresse superam em muito os riscos do vasoconstritor em doses adequadas.</p>
+                            <p class="mt-2">Para pacientes com doenças cardiovasculares graves não controladas (infarto recente, angina instável, arritmias graves), recomenda-se consulta médica prévia. A felipressina (presente na prilocaína) pode ser uma alternativa para casos selecionados.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-5">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Como reconhecer e tratar uma reação tóxica ao anestésico local?</h4>
+                            <p>Segundo Malamed, os sinais de toxicidade se manifestam em estágios:</p>
+                            <ol class="list-decimal pl-6 space-y-1 mt-2">
+                                <li><strong>Estágio de excitação:</strong> confusão, fala arrastada, agitação, zumbidos, gosto metálico, taquicardia.</li>
+                                <li><strong>Estágio de depressão:</strong> sonolência, hipotensão, bradicardia, depressão respiratória.</li>
+                                <li><strong>Estágio grave:</strong> convulsões, perda de consciência, parada respiratória e cardíaca.</li>
+                            </ol>
+                            <p class="mt-2">O tratamento inclui interromper a administração do anestésico, posicionar o paciente adequadamente, manter vias aéreas, fornecer oxigênio, monitorar sinais vitais e, se necessário, usar benzodiazepínicos para controlar convulsões. Em casos graves, a administração de emulsão lipídica intravenosa a 20% pode ser necessária.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Técnicas Especiais de Malamed</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <h4 class="text-xl font-semibold text-blue-600 mb-3">Técnica de Gow-Gates</h4>
+                            <p class="mb-3">Desenvolvida pelo Dr. George Gow-Gates em 1973 e popularizada internacionalmente por Malamed, esta técnica visa anestesiar o tronco principal do nervo mandibular próximo à base do crânio.</p>
+                            <p class="mb-3"><strong>Vantagens:</strong></p>
+                            <ul class="list-disc pl-6 space-y-1 mb-3">
+                                <li>Taxa de sucesso mais alta que o BNAI convencional (95-96%)</li>
+                                <li>Menor incidência de aspiração positiva (2%)</li>
+                                <li>Anestesia do nervo bucal, lingual e alveolar inferior com uma única injeção</li>
+                                <li>Menor risco de injeção intravascular</li>
+                            </ul>
+                            <p><strong>Ponto de referência:</strong> Canto da boca lateralmente e altura do segundo molar superior verticalmente.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <h4 class="text-xl font-semibold text-blue-600 mb-3">Técnica de Vazirani-Akinosi</h4>
+                            <p class="mb-3">Técnica de boca fechada introduzida por Akinosi em 1977, muito útil para pacientes com limitação de abertura bucal ou trismo.</p>
+                            <p class="mb-3"><strong>Vantagens:</strong></p>
+                            <ul class="list-disc pl-6 space-y-1 mb-3">
+                                <li>Permite anestesia com boca fechada</li>
+                                <li>Útil em casos de trismo</li>
+                                <li>Menor desconforto para o paciente</li>
+                                <li>Anestesia os nervos alveolar inferior, bucal e lingual</li>
+                            </ul>
+                            <p><strong>Ponto de referência:</strong> Plano oclusal dos molares superiores, medialmente à rafe pterigomandibular.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-blue-700 mb-3">Recomendações Finais de Malamed</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-white p-4 rounded shadow-sm">
+                                    <h4 class="font-medium text-blue-600 mb-2">Para o profissional</h4>
+                                    <ul class="list-disc pl-5 space-y-1 text-sm">
+                                        <li>Conheça profundamente a anatomia</li>
+                                        <li>Estabeleça pontos de referência antes da injeção</li>
+                                        <li>Use agulhas novas para cada paciente</li>
+                                        <li>Realize sempre aspiração antes da injeção</li>
+                                        <li>Injete lentamente (1 mL/min)</li>
+                                        <li>Esteja preparado para emergências</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded shadow-sm">
+                                    <h4 class="font-medium text-blue-600 mb-2">Para o procedimento</h4>
+                                    <ul class="list-disc pl-5 space-y-1 text-sm">
+                                        <li>Use anestesia tópica eficaz</li>
+                                        <li>Utilize técnicas complementares quando necessário</li>
+                                        <li>Aguarde o tempo adequado para início da ação</li>
+                                        <li>Teste a eficácia antes de iniciar o procedimento</li>
+                                        <li>Registre a solução e quantidade utilizadas</li>
+                                        <li>Considere o procedimento a ser realizado na escolha do anestésico</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded shadow-sm">
+                                    <h4 class="font-medium text-blue-600 mb-2">Para o paciente</h4>
+                                    <ul class="list-disc pl-5 space-y-1 text-sm">
+                                        <li>Explique o procedimento antes da anestesia</li>
+                                        <li>Considere a ansiedade como fator importante</li>
+                                        <li>Informe sobre a duração do efeito anestésico</li>
+                                        <li>Oriente sobre cuidados após o procedimento</li>
+                                        <li>Ajuste a dosagem considerando peso e condição médica</li>
+                                        <li>Documente reações adversas no prontuário</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Recursos Recomendados</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-3">Livros</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Malamed SF. Manual de Anestesia Local. 7ª ed. Elsevier, 2020.</li>
+                                <li>Malamed SF. Medical Emergencies in the Dental Office. 7ª ed. Mosby, 2014.</li>
+                                <li>Malamed SF. Sedation: A Guide to Patient Management. 6ª ed. Mosby, 2017.</li>
+                                <li>Malamed SF, Trieger N. Intravenous Sedation in Dentistry. 2ª ed.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-3">Artigos e Recursos Online</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><a href="https://www.nysora.com/pt/t%C3%A9cnicas/blocos-de-cabe%C3%A7a-e-pesco%C3%A7o/anestesia-regional-bucomaxilofacial/" class="text-blue-600 hover:underline" target="_blank">NYSORA - Anestesia Regional Oral e Maxilofacial</a></li>
+                                <li>Malamed SF. "What's new in local anesthesia?" SAAD Digest. 2009;25:4-14.</li>
+                                <li>Malamed SF. "Local anesthetics: dentistry's most important drugs." JADA. 1994;125(12):1571-1576.</li>
+                                <li>Canal do YouTube: "Dentista de Sucesso" - Vídeos sobre anestesia</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold">ANESTESIA_FBBR</h2>
+                    <p class="text-sm mt-2">Portal Educacional de Anestesia Odontológica</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-sm">© 2025 ANESTESIA_FBBR_ Prof. Erik Jesus. Todos os direitos reservados.</p>
+                    <p class="text-xs mt-2">Harrison R Costa. Este site foi criado para fins educacionais.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navegação entre páginas
+        const navButtons = document.querySelectorAll('.nav-button');
+        const pages = document.querySelectorAll('.page-content');
+        
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove a classe active de todos os botões e páginas
+                navButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+                navButtons.forEach(btn => btn.classList.add('bg-gray-200', 'hover:bg-blue-600', 'hover:text-white'));
+                pages.forEach(page => page.classList.remove('active'));
+                
+                // Adiciona a classe active ao botão clicado
+                this.classList.add('active', 'bg-blue-600', 'text-white');
+                this.classList.remove('bg-gray-200', 'hover:bg-blue-600', 'hover:text-white');
+                
+                // Mostra a página correspondente
+                const pageId = this.id.replace('btn', 'page');
+                document.getElementById(pageId).classList.add('active');
+                
+                // Scroll para o topo da página
+                window.scrollTo(0, 0);
+            });
+        });
+    </script>
+
+
+        </body></html>
